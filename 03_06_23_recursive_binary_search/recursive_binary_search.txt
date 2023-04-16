@@ -1,0 +1,8 @@
+Изучить исходный код: 
+https://drive.google.com/file/d/1w_G0JLT_WLAFaLiPS0libV9p1-LMyKyY/view
+
+Презентация:
+https://docs.google.com/presentation/d/1boSP95bhuhSg3jgWpPX1RbuHSb1PLnE1vvHXPQLs8OA/edit#slide=id.g1b9234bee13_0_20 
+
+task:
+Написать рекурсивную реализацию бинарного поиска
