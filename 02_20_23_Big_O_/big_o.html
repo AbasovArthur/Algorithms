@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big O</title>
+</head>
+
+<body>
+    <script>
+
+        //task #0
+        let arr = [9, 3, 7, 4, 1, 2];
+        //alert(arr);
+        console.log(' before sort: ' + arr);
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    let t = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = t;
+                }
+            }
+        }
+        //alert(arr);
+        console.log(' after sort: ' + arr);
+
+//  Оценка сложности алгоритма в данной задаче: O(n^2).
+/*
+    Алгоритм, представленный в коде, является сортировкой пузырьком.
+    В худшем и среднем случаях сложность сортировки пузырьком
+    составляет O(n^2), 
+    где n - количество элементов в массиве.
+    В коде есть 2 вложенных цикла for,
+    каждый из которых выполняется в зависимости от длины массива.
+*/
+/*
+        task #1
+            START
+            READ number n
+            IF n == 1 THEN return
+            FOR i = 1, i <= n, i + 1
+            FOR j = 1; j <= n, j + 1
+                print "*"
+                BREAK
+            END
+*/
+
+        const n = parseInt(prompt('please add num n:'), 10);
+        if(n !== 1 ) {
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= n; j++) {
+                    document.write('*');
+                    break; //с этим оператором вложенный цикл выполняется только 1 раз (n='*')              
+                }         
+                document.write('<br>')       
+            }
+        }
+//  Оценка сложности алгоритма в данной задаче: O(n).
+
+//  Внешний цикл выполняется n раз, вложенный цикл — 1 раз (из-за break);
+//  таким образом, общая сложность алгоритма составляет O(n)
+
+/*
+        task #2
+            START
+            READ number n
+            numbers i = 0, j = 0, a = 0
+            FOR i = n/2, i <= n; i + 1
+            FOR j = 2, j <= n, j * 2
+                a = a + n / 2
+            END
+*/
+
+        const n = parseInt(prompt('please add num n:'), 10);
+        let i = 0, j = 0, a = 0;
+
+        for (let i = n / 2; i <= n; i++) { // цикл выполняется (n/2) раз 
+            for (let j = 2; j <= n; j *= 2) { //цикл выполняется log2(n) - на каждом шаге значение переменной j удваивается
+                a = a + n / 2;
+            }
+        }
+        console.log(a);
+
+//  Общая сложность алгоритма составляет O(n * log(n));
+//  так как в худшем случае алгоритм будет выполняться n/2 * log2(n) раз.
+
+/*
+        task #3
+            START
+            READ number n
+            number a = 0
+            FOR i = 0, i < n, i + 1
+            FOR j = n, j > i, j - 1
+                a = a + i + j
+            END
+*/
+        const n = parseInt(prompt('please add num n:'), 10);
+        let a = 0;
+
+        for (let i = 0; i < n; i++) { // цикл выполняется n раз
+            for (let j = 0; j > n; j--) { // сложность (n - i) для каждого значения i
+                a = a + i + j;
+            }            
+        }
+        console.log(a);
+
+//  Oбщая сложность алгоритма составляет O(n^2);
+//  так как алгоритм выполнит примерно n * (n / 2) итераций.
+
+/*
+        task #4
+            START
+            READ number n
+            numbers a = 0, i = n
+            WHILE i > 0
+            a = a + i
+            i = i / 2
+            END
+*/
+        const n = parseInt(prompt('please add num n:'), 10);
+        let a = 0, i = n;
+
+        while (i > 0) {
+            a = a + i;
+            i = i / 2;
+        }
+        console.log(a);
+
+//  Оценка сложности алгоритма: цикл while выполняется log2(n) раз
+//  так как на каждой итерации значение i делится пополам.
+//  Соответственно, общая сложность алгоритма составляет O(log(n))
+
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    parseInt() функция в JavaScript используется для преобразования строки в целое число.
+            принимает два аргумента: строку => преобр в число; и системы счисления ( _, 10 )
+    prompt() возвращает введенное значение в виде строки
+    document.write() функция  в JavaScript используется для вывода контента на веб-страницу
+ -->
+
+</html>
