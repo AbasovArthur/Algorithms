@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanojskaya bashnya</title>
+</head>
+<body>
+    <script>
+        // n (количество дисков) 
+        // src (исходный стержень)
+        // dst (целевой стержень)
+        // aux (вспомогательный стержень)
+
+        function hanoi(n, src, dst, aux) {
+            if (n > 0) {
+               
+              hanoi(n - 1, src, aux, dst);   
+
+              console.log(`c ${src} на ${dst}`);
+              
+              hanoi(n - 1, aux, dst, src)
+            }
+        }
+
+        //const numberOfDisks = 3;    // количество дисков
+        const numberOfDisks = 5;    // next level
+
+        hanoi(numberOfDisks, 1, 3, 2);
+
+/*  РЕКУРСИВНАЯ ФУНКЦИЯ "hanoi()"
+
+    1)  Переместим n-1 дисков с исходного стержня на вспомогательный, используя целевой стержень в качестве промежуточного
+    [ hanoi(n - 1, src, aux, dst); ]
+
+    2)  Переместим самый большой диск (n-й диск) с исходного стержня на целевой стержень
+    [ (`c ${src} на ${dst}`) ]
+
+    3)  Переместим n-1 дисков с вспомогательного стержня на целевой, используя исходный стержень в качестве промежуточного
+    [ hanoi(n - 1, aux, dst, src) ]
+
+    src - (source)  исходный стержень, с которого переносим диски.
+    dst - (destination)  целевой стержень, на который переносим диски.
+    aux - (auxiliary)  вспомогательный стержень, который используется для временного хранения дисков в процессе перемещения.
+
+*/
+    </script>
+</body>
+</html>
